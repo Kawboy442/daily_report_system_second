@@ -49,7 +49,7 @@ public class Report {
 	@JoinColumn(name = "employee_id", nullable = false)
 	private Employee employee;
 
-	@Column(name = "report_date", nullable = false)
+	@Column(name = "report_date", nullable = false, unique = true)
 	private Date report_date;
 
 	@Column(name = "title", length = 255, nullable = false)
