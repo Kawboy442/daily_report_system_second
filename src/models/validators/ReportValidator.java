@@ -48,7 +48,6 @@ public class ReportValidator {
 	}
 
 	private static String _validateReportDate(Date reportDate, Boolean reportDateDuplicateCheckFlag) {
-
 		// 日報が重複していないかチェック
 		if(reportDateDuplicateCheckFlag) {
 			EntityManager em = DBUtil.createEntityManager();
