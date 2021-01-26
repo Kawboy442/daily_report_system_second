@@ -48,16 +48,10 @@ public class ReportsCreateServlet extends HttpServlet {
 			Date report_date = new Date(System.currentTimeMillis());
 			String rd_str = request.getParameter("report_date");
 
-			// 既に日報が作成されているかどうかのフラグ
-			Boolean reportDateDuplicateCheckFlag = false;
-
 			if(rd_str != null && !rd_str.equals("")) {
 				report_date = Date.valueOf(request.getParameter("report_date"));
-			} else {
-				reportDateDuplicateCheckFlag = true;
 			}
 			r.setReport_date(report_date);
-
 
 			r.setTitle(request.getParameter("title"));
 			r.setContent(request.getParameter("content"));
@@ -66,7 +60,7 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setCreated_at(currentTime);
 			r.setUpdated_at(currentTime);
 
-			List<String> errors = ReportValidator.validate(r, reportDateDuplicateCheckFlag);
+			List<String> errors = ReportValidator.validate(r, true);
 			if(errors.size() > 0) {
 				em.close();
 
