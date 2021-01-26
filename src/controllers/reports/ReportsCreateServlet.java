@@ -47,6 +47,7 @@ public class ReportsCreateServlet extends HttpServlet {
 
 			Date report_date = new Date(System.currentTimeMillis());
 			String rd_str = request.getParameter("report_date");
+
 			if(rd_str != null && !rd_str.equals("")) {
 				report_date = Date.valueOf(request.getParameter("report_date"));
 			}
@@ -59,7 +60,7 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setCreated_at(currentTime);
 			r.setUpdated_at(currentTime);
 
-			List<String> errors = ReportValidator.validate(r);
+			List<String> errors = ReportValidator.validate(r, true);
 			if(errors.size() > 0) {
 				em.close();
 
