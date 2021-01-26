@@ -52,7 +52,9 @@ public class ReportValidator {
 		// 日報が重複していないかチェック
 		if(reportDateDuplicateCheckFlag) {
 			EntityManager em = DBUtil.createEntityManager();
-			long report_date_count = (long) em.createNamedQuery("checkReportDate", Long.class);
+			long report_date_count = (long) em.createNamedQuery("checkReportDate", Long.class)
+					.setParameter("report_date", reportDate)
+					.getSingleResult();
 			em.close();
 			if(report_date_count > 0) {
 				return "すでに日報が作成されています。";
