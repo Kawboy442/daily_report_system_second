@@ -6,7 +6,7 @@
 		<c:choose>
 			<c:when test="${report != null}">
 				<h2>日報 新規登録ページ</h2>
-				<form method="POST" action="<c:url value='/reports/update' />">
+				<form method="POST" action="<c:url value='/reports/create' />">
 					<c:if test="${errors != null}">
     					<div id="flush_error">
         					入力内容にエラーがあります。<br />
