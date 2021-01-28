@@ -24,13 +24,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>始業日時</th>
+                            <th>始業時間</th>
                             <td>
                             	<fmt:formatDate value="${report.start_time}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
                         <tr>
-                            <th>就業日時</th>
+                            <th>終業時間</th>
                             <td>
                             	<fmt:formatDate value="${report.end_time}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
