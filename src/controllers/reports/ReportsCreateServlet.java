@@ -51,6 +51,7 @@ public class ReportsCreateServlet extends HttpServlet {
 
 			if(rd_str != null && !rd_str.equals("")) {
 				report_date = Date.valueOf(request.getParameter("report_date"));
+				System.out.println("valueOfパラメータ：" + request.getParameter("report_date"));
 			}
 			r.setReport_date(report_date);
 
@@ -58,7 +59,9 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setContent(request.getParameter("content"));
 
 			r.setStart_time(Time.valueOf(request.getParameter("start_time")));
+			System.out.println("valueOfパラメータ：" + request.getParameter("start_time"));
 			r.setEnd_time(Time.valueOf(request.getParameter("end_time")));
+			System.out.println("valueOfパラメータ：" + request.getParameter("end_time"));
 
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			r.setCreated_at(currentTime);
