@@ -1,7 +1,6 @@
 package models;
 
 import java.sql.Date;
-import java.sql.Time;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -61,10 +60,10 @@ public class Report {
 	private String content;
 
 	@Column(name = "start_time", nullable = true)
-	private Time start_time;
+	private String start_time;
 
 	@Column(name = "end_time", nullable = true)
-	private Time end_time;
+	private String end_time;
 
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
@@ -112,19 +111,19 @@ public class Report {
 		this.content = content;
 	}
 
-	public Time getStart_time() {
+	public String getStart_time() {
 		return start_time;
 	}
 
-	public void setStart_time(Time start_time) {
+	public void setStart_time(String start_time) {
 		this.start_time = start_time;
 	}
 
-	public Time getEnd_time() {
+	public String getEnd_time() {
 		return end_time;
 	}
 
-	public void setEnd_time(Time end_time) {
+	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
 	}
 
