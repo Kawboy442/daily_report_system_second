@@ -1,7 +1,6 @@
 package controllers.reports;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -42,9 +41,12 @@ public class ReportsUpdateServlet extends HttpServlet {
 
 			Report r = em.find(Report.class, (Integer)(request.getSession().getAttribute("report_id")));
 
-			r.setReport_date(Date.valueOf(request.getParameter("report_date")));
 			r.setTitle(request.getParameter("title"));
 			r.setContent(request.getParameter("content"));
+
+			r.setStart_time(request.getParameter("start_time"));
+			r.setEnd_time(request.getParameter("end_time"));
+
 			r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
 			List<String> errors = ReportValidator.validate(r, false);

@@ -28,6 +28,14 @@
 						<input type="text" name="title" value="${report.title}" />
 						<br /><br />
 
+						<label for="title">始業時間</label><br />
+						<input type="datetime-local" name="start_time" value="${report.start_time}" step="60" />
+						<br /><br />
+
+						<label for="title">終業時間</label><br />
+						<input type="datetime-local" name="end_time" value="${report.end_time}" step="60" />
+						<br /><br />
+
 						<label for="content">内容</label><br />
 						<textarea name="content" rows="10" cols="50">${report.content}</textarea>
 						<br /><br />

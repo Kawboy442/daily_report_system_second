@@ -24,6 +24,18 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>始業時間</th>
+                            <td>
+                            	<c:out value='${report.start_time}' />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>終業時間</th>
+                            <td>
+                            	<c:out value='${report.end_time}' />
+                            </td>
+                        </tr>
+                        <tr>
                             <th>登録日時</th>
                             <td>
                                 <fmt:formatDate value="${report.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
