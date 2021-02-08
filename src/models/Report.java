@@ -65,6 +65,13 @@ public class Report {
 	@Column(name = "end_time", nullable = true)
 	private String end_time;
 
+	@Column(name = "negotiations_status", nullable = true)
+	private Integer negotiations_status;
+
+	@Lob
+	@Column(name = "negotiations_content", nullable = false)
+	private String negotiations_content;
+
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
 
@@ -125,6 +132,22 @@ public class Report {
 
 	public void setEnd_time(String end_time) {
 		this.end_time = end_time;
+	}
+
+	public Integer getNegotiations_status() {
+		return negotiations_status;
+	}
+
+	public void setNegotiations_status(Integer negotiations_status) {
+		this.negotiations_status = negotiations_status;
+	}
+
+	public String getNegotiations_content() {
+		return negotiations_content;
+	}
+
+	public void setNegotiations_content(String negotiations_content) {
+		this.negotiations_content = negotiations_content;
 	}
 
 	public Timestamp getCreated_at() {
