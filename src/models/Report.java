@@ -69,7 +69,7 @@ public class Report {
 	private Integer negotiations_status;
 
 	@Lob
-	@Column(name = "negotiations_content", length = 1000, nullable = false)
+	@Column(name = "negotiations_content", length = 1000, nullable = true)
 	private String negotiations_content;
 
 	@Column(name = "created_at", nullable = false)
