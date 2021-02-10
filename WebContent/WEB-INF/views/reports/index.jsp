@@ -17,6 +17,7 @@
                     <th class="report_title">タイトル</th>
                     <th class="report_startTime">始業時間</th>
                     <th class="report_endTime">終業時間</th>
+                    <th class="report_negotiations_status">商談状況</th>
                     <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
@@ -24,8 +25,15 @@
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="report_title">${report.title}</td>
-                        <td class="report_title">${report.start_time}</td>
-                        <td class="report_title">${report.end_time}</td>
+                        <td class="report_startTime">${report.start_time}</td>
+                        <td class="report_endTime">${report.end_time}</td>
+                        <td class="report_negotiations_status">
+                                <c:choose>
+                                    <c:when test="${report.negotiations_status == 1}">商談中</c:when>
+                                    <c:when test="${report.negotiations_status == 2}">商談成立</c:when>
+                                    <c:when test="${report.negotiations_status == 3}">商談不成立</c:when>
+                                </c:choose>
+                       </td>
                         <td class="report_action"><a href="<c:url value='/reports/show?id=${report.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
