@@ -42,9 +42,9 @@
 
 						<label for="negotiations_status">商談状況</label><br />
 						<select name=”negotiations_status”>
-   							<option value="0"<c:if test="${report.negotiations_status == 0}"> selected</c:if>>商談中</option>
-    						<option value="1"<c:if test="${report.negotiations_status == 1}"> selected</c:if>>商談成立</option>
-    						<option value="2"<c:if test="${report.negotiations_status == 2}"> selected</c:if>>商談不成立</option>
+							<option value="1"<c:if test="${report.negotiations_status == 1}"> selected</c:if>>商談中</option>
+    						<option value="2"<c:if test="${report.negotiations_status == 2}"> selected</c:if>>商談成立</option>
+    						<option value="3"<c:if test="${report.negotiations_status == 3}"> selected</c:if>>商談不成立</option>
 						</select>
 						<br /><br />
 

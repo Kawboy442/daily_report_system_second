@@ -36,6 +36,22 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>商談状況</th>
+                            <td>
+                            	<c:choose>
+                                    <c:when test="${report.negotiations_status == 1}">商談中</c:when>
+                                    <c:when test="${report.negotiations_status == 2}">商談成立</c:when>
+                                    <c:when test="${report.negotiations_status == 3}">商談不成立</c:when>
+                                </c:choose>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>商談状況内容</th>
+                            <td>
+                            	<c:out value='${report.negotiations_content}' />
+                            </td>
+                        </tr>
+                        <tr>
                             <th>登録日時</th>
                             <td>
                                 <fmt:formatDate value="${report.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
