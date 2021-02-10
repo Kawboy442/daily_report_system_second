@@ -48,7 +48,7 @@ public class ReportsUpdateServlet extends HttpServlet {
 			r.setEnd_time(request.getParameter("end_time"));
 
 			r.setNegotiations_status(Integer.parseInt(request.getParameter("negotiations_status")));
-			r.setNegotiations_content(request.getParameter("negotiations_status"));
+			r.setNegotiations_content(request.getParameter("negotiations_content"));
 
 			r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
