@@ -47,7 +47,7 @@ public class ReportsUpdateServlet extends HttpServlet {
 			r.setContent(request.getParameter("content"));
 
 			SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-			SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+			SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 			try {
 				java.util.Date parsedStartTime = (java.util.Date) inputFormat.parse(request.getParameter("start_time"));
 				java.util.Date parsedEndTime = (java.util.Date) inputFormat.parse(request.getParameter("end_time"));
