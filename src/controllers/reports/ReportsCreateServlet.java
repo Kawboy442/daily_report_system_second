@@ -60,6 +60,9 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setStart_time(request.getParameter("start_time"));
 			r.setEnd_time(request.getParameter("end_time"));
 
+			r.setNegotiations_status(Integer.parseInt(request.getParameter("negotiations_status")));
+			r.setNegotiations_content(request.getParameter("negotiations_status"));
+
 			Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 			r.setCreated_at(currentTime);
 			r.setUpdated_at(currentTime);
