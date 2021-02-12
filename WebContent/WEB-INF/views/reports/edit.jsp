@@ -49,7 +49,7 @@
 						<br /><br />
 
 						<label for="negotiations_content">商談状況内容</label><br />
-						<textarea name="negotiations_content" rows="10" cols="50"></textarea>
+						<textarea name="negotiations_content" rows="10" cols="50">${report.negotiations_content}</textarea>
 						<br /><br />
 
 						<input type="hidden" name="_token" value="${_token}" />
