@@ -26,13 +26,14 @@
                         <tr>
                             <th>始業時間</th>
                             <td>
-                            	<c:out value='${report.start_time}' />
+                            	<fmt:formatDate value="${report.start_time}" pattern="yyyy-MM-dd HH:mm" />
                             </td>
                         </tr>
                         <tr>
                             <th>終業時間</th>
                             <td>
-                            	<c:out value='${report.end_time}' />
+
+                            	<fmt:formatDate value="${report.end_time}" pattern="yyyy-MM-dd HH:mm" />
                             </td>
                         </tr>
                         <tr>

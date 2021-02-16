@@ -25,8 +25,8 @@
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${report.report_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="report_title">${report.title}</td>
-                        <td class="report_startTime">${report.start_time}</td>
-                        <td class="report_endTime">${report.end_time}</td>
+                        <td class="report_startTime"><fmt:formatDate value="${report.start_time}" pattern="yyyy-MM-dd HH:mm" /></td>
+                        <td class="report_endTime"><fmt:formatDate value="${report.end_time}" pattern="yyyy-MM-dd HH:mm" /></td>
                         <td class="report_negotiations_status">
                                 <c:choose>
                                     <c:when test="${report.negotiations_status == 1}">商談中</c:when>
