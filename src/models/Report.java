@@ -60,10 +60,10 @@ public class Report {
 	private String content;
 
 	@Column(name = "start_time", nullable = true)
-	private String start_time;
+	private Timestamp start_time;
 
 	@Column(name = "end_time", nullable = true)
-	private String end_time;
+	private Timestamp end_time;
 
 	@Column(name = "negotiations_status", nullable = true)
 	private Integer negotiations_status;
@@ -118,19 +118,19 @@ public class Report {
 		this.content = content;
 	}
 
-	public String getStart_time() {
+	public Timestamp getStart_time() {
 		return start_time;
 	}
 
-	public void setStart_time(String start_time) {
+	public void setStart_time(Timestamp start_time) {
 		this.start_time = start_time;
 	}
 
-	public String getEnd_time() {
+	public Timestamp getEnd_time() {
 		return end_time;
 	}
 
-	public void setEnd_time(String end_time) {
+	public void setEnd_time(Timestamp end_time) {
 		this.end_time = end_time;
 	}
 

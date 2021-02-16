@@ -60,14 +60,13 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setContent(request.getParameter("content"));
 
 			SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-			SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 			try {
-				java.util.Date parsedStartTime = (java.util.Date) inputFormat.parse(request.getParameter("start_time"));
-				java.util.Date parsedEndTime = (java.util.Date) inputFormat.parse(request.getParameter("end_time"));
-				String startTime = outputFormat.format(parsedStartTime);
-				String endTime = outputFormat.format(parsedEndTime);
-				r.setStart_time(startTime);
-				r.setEnd_time(endTime);
+				java.util.Date startTime = (java.util.Date) inputFormat.parse(request.getParameter("start_time"));
+				java.util.Date endTime = (java.util.Date) inputFormat.parse(request.getParameter("end_time"));
+				java.sql.Timestamp startTimestamp = new java.sql.Timestamp(startTime.getTime());
+				java.sql.Timestamp endTimestamp = new java.sql.Timestamp(endTime.getTime());
+				r.setStart_time(startTimestamp);
+				r.setEnd_time(endTimestamp);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
