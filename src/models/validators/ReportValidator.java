@@ -2,6 +2,7 @@ package models.validators;
 
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,14 +60,20 @@ public class ReportValidator {
 	}
 
 	private static String _validateStartTime(Timestamp startTimestamp, Date report_date) {
-		if(!(startTimestamp.equals(report_date))) {
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		String startTime = fmt.format(startTimestamp);
+		String reportDate = fmt.format(report_date);
+		if(!(startTime.equals(reportDate))) {
 			return "始業時間の日付が日報の日付と異なっています。";
 		}
 		return "";
 	}
 
 	private static String _validateEndTime(Timestamp endTimestamp, Date report_date) {
-		if(!(endTimestamp.equals(report_date))) {
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		String endTime = fmt.format(endTimestamp);
+		String reportDate = fmt.format(report_date);
+		if(!(endTime.equals(reportDate))) {
 			return "終業時間の日付が日報の日付と異なっています。";
 		}
 		return "";
