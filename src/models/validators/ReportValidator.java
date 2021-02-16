@@ -14,9 +14,14 @@ public class ReportValidator {
 	public static List<String> validate(Report r, Boolean reportDateDuplicateCheckFlag) {
 		List<String> errors = new ArrayList<String>();
 
-		String reportDate_error = _validateReportDate(r.getReport_date(), reportDateDuplicateCheckFlag);
-		if(!reportDate_error.equals("")) {
-			errors.add(reportDate_error);
+		String title_error = _validateTitle(r.getTitle());
+		if(!title_error.equals("")) {
+			errors.add(title_error);
+		}
+
+		String content_error = _validateContent(r.getContent());
+		if(!content_error.equals("")) {
+			errors.add(content_error);
 		}
 
 		String startTime_error = _validateStartTime(r.getStart_time(),r.getReport_date());
@@ -29,14 +34,9 @@ public class ReportValidator {
 			errors.add(endTime_error);
 		}
 
-		String title_error = _validateTitle(r.getTitle());
-		if(!title_error.equals("")) {
-			errors.add(title_error);
-		}
-
-		String content_error = _validateContent(r.getContent());
-		if(!content_error.equals("")) {
-			errors.add(content_error);
+		String reportDate_error = _validateReportDate(r.getReport_date(), reportDateDuplicateCheckFlag);
+		if(!reportDate_error.equals("")) {
+			errors.add(reportDate_error);
 		}
 
 		return errors;
