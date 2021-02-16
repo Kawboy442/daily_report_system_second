@@ -1,6 +1,7 @@
 package models.validators;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,16 @@ public class ReportValidator {
 		String reportDate_error = _validateReportDate(r.getReport_date(), reportDateDuplicateCheckFlag);
 		if(!reportDate_error.equals("")) {
 			errors.add(reportDate_error);
+		}
+
+		String startTime_error = _validateStartTime(r.getStart_time(),r.getReport_date());
+		if(!startTime_error.equals("")) {
+			errors.add(startTime_error);
+		}
+
+		String endTime_error = _validateEndTime(r.getEnd_time(),r.getReport_date());
+		if(!endTime_error.equals("")) {
+			errors.add(endTime_error);
 		}
 
 		String title_error = _validateTitle(r.getTitle());
@@ -44,6 +55,20 @@ public class ReportValidator {
 			return "内容を入力してください。";
 		}
 
+		return "";
+	}
+
+	private static String _validateStartTime(Timestamp startTimestamp, Date report_date) {
+		if(!(startTimestamp.equals(report_date))) {
+			return "始業時間の日付が日報の日付と異なっています。";
+		}
+		return "";
+	}
+
+	private static String _validateEndTime(Timestamp endTimestamp, Date report_date) {
+		if(!(endTimestamp.equals(report_date))) {
+			return "終業時間の日付が日報の日付と異なっています。";
+		}
 		return "";
 	}
 
