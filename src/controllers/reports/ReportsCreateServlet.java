@@ -3,8 +3,6 @@ package controllers.reports;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -59,17 +57,8 @@ public class ReportsCreateServlet extends HttpServlet {
 			r.setTitle(request.getParameter("title"));
 			r.setContent(request.getParameter("content"));
 
-			SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
-			try {
-				java.util.Date startTime = (java.util.Date) inputFormat.parse(request.getParameter("start_time"));
-				java.util.Date endTime = (java.util.Date) inputFormat.parse(request.getParameter("end_time"));
-				java.sql.Timestamp startTimestamp = new java.sql.Timestamp(startTime.getTime());
-				java.sql.Timestamp endTimestamp = new java.sql.Timestamp(endTime.getTime());
-				r.setStart_time(startTimestamp);
-				r.setEnd_time(endTimestamp);
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+			r.setStart_time(request.getParameter("start_time"));
+			r.setEnd_time(request.getParameter("end_time"));
 
 			r.setNegotiations_status(Integer.parseInt(request.getParameter("negotiations_status")));
 			r.setNegotiations_content(request.getParameter("negotiations_content"));
